@@ -50,6 +50,8 @@ gem 'ffi'
 
 gem 'httparty'
 
+gem 'nokogiri'
+
 group :development, :test do
   gem 'brakeman'
   gem 'bundler-audit'
