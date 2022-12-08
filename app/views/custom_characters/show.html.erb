@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+<div class="container">
+  <%= render @custom_character %>
+
+  <div>
+    <%= link_to "Edit this Custom Character", edit_custom_character_path(@custom_character), class:"btn btn-primary" %> |
+    <%= link_to "Back to Custom Characters", custom_characters_path, class:"btn btn-secondary" %>
+
+    <%= button_to "Destroy this custom character", @custom_character, method: :delete %>
+  </div>
+</div>

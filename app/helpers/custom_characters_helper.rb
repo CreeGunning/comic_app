@@ -1,0 +1,2 @@
+module CustomCharactersHelper
+end

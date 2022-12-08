@@ -1,0 +1,15 @@
+<div id="<%= dom_id custom_character %>">
+  <h3>
+    <%= custom_character.name %>
+  </h3>
+
+  <p>
+    <strong>Powers:</strong>
+    <%= custom_character.powers %>
+  </p>
+
+  <p> <strong>Posted by</strong> <%= link_to custom_character.user.name, user_path(custom_character.user) %> </p>
+
+  <p><%= pluralize(custom_character.views, "view") %></p>
+
+</div>

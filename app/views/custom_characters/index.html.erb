@@ -1,0 +1,18 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<h1>All Custom Characters</h1>
+<br>
+<%= link_to "Create a New Custom Character", new_custom_character_path, class:"btn btn-primary" %>
+<br>
+<br>
+
+<div id="custom_characters">
+  <% @custom_characters.each do |custom_character| %>
+    <%= render custom_character %>
+    <p>
+      <%= link_to "Show this Custom Character", custom_character, class:"btn btn-secondary"  %>
+    </p>
+  <% end %>
+</div>
+<div>
