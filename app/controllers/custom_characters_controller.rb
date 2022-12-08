@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CustomCharactersController < ApplicationController
-  before_action :set_custom_character, only: %i[ show edit update destroy ]
+  before_action :set_custom_character, only: %i[show edit update destroy]
 
   # GET /custom_characters or /custom_characters.json
   def index
@@ -17,8 +19,7 @@ class CustomCharactersController < ApplicationController
   end
 
   # GET /custom_characters/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /custom_characters or /custom_characters.json
   def create
@@ -27,7 +28,9 @@ class CustomCharactersController < ApplicationController
 
     respond_to do |format|
       if @custom_character.save
-        format.html { redirect_to custom_character_url(@custom_character), notice: "Custom character was successfully created." }
+        format.html do
+          redirect_to custom_character_url(@custom_character), notice: 'Custom character was successfully created.'
+        end
         format.json { render :show, status: :created, location: @custom_character }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +43,9 @@ class CustomCharactersController < ApplicationController
   def update
     respond_to do |format|
       if @custom_character.update(custom_character_params)
-        format.html { redirect_to custom_character_url(@custom_character), notice: "Custom character was successfully updated." }
+        format.html do
+          redirect_to custom_character_url(@custom_character), notice: 'Custom character was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @custom_character }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,19 +59,20 @@ class CustomCharactersController < ApplicationController
     @custom_character.destroy
 
     respond_to do |format|
-      format.html { redirect_to custom_characters_url, notice: "Custom character was successfully destroyed." }
+      format.html { redirect_to custom_characters_url, notice: 'Custom character was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_custom_character
-      @custom_character = CustomCharacter.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def custom_character_params
-      params.require(:custom_character).permit(:name, :powers)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_custom_character
+    @custom_character = CustomCharacter.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def custom_character_params
+    params.require(:custom_character).permit(:name, :powers)
+  end
 end
