@@ -1,0 +1,23 @@
+<h1>Star Wars Characters</h1>
+<% @people_data.each_with_index do |person, index| %>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= person['name'] %>
+          </h5>
+          <p class="card-text">
+            <strong>Height:</strong>
+            <%= person['height'] %>
+          </p>
+          <p class="card-text">
+            <strong>Skin Color:</strong>
+            <%= person['skin_color'] %>
+          </p>
+          <%= link_to "Back to comic posts", sw_character_path(index) %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

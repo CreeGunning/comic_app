@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/u/:id', to: 'users#profile', as: 'user'
 
   resources :custom_characters
+  resources :sw_characters
+
   get 'about', to: 'pages#about'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
