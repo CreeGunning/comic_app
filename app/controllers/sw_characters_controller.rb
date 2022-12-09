@@ -11,7 +11,7 @@ class SwCharactersController < ApplicationController
   private
 
   def fetch_data
-    responce = HTTParty.get('https://swapi.dev/api/people/')
-    @people_data = responce['results']
+    response = HTTParty.get('https://swapi.dev/api/people/')
+    @people_data = response['results']
   end
 end

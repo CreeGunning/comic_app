@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :custom_characters
   resources :sw_characters
+  resources :rm_characters
 
   get 'about', to: 'pages#about'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

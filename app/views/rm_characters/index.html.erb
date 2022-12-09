@@ -1,0 +1,28 @@
+<div class="container">
+<h1>Rick & Morty Characters</h1>
+<% @rm_data.each_with_index do |rm, index| %>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= rm['name'] %>
+          </h5>
+          <p class="card-text">
+            <strong>Species:</strong>
+            <%= rm['species'] %>
+          </p>
+          <p class="card-text">
+            <strong>Location:</strong>
+            <%= rm['location']['name'] %>
+          </p>
+          <p class="card-text">
+            <img src="<%= rm['image']%>"><img>
+          </p>
+          <%= link_to "Show this character", rm_character_path(index), class:"btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

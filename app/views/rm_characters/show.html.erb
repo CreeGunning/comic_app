@@ -1,0 +1,25 @@
+<br>
+<div class="container">
+   <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= @rm_character['name'] %>
+          </h5>
+          <p class="card-text">
+            <strong>Species:</strong>
+            <%= @rm_character['species'] %>
+          </p>
+          <p class="card-text">
+            <strong>Location:</strong>
+            <%= @rm_character['location']['name'] %>
+          </p>
+          <p class="card-text">
+            <img src="<%= @rm_character['image']%>"><img>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
