@@ -4,30 +4,20 @@
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">
-              <%= @sw_character['name'] %>
-          </h4>
-        </div>
-        <div class="card-body">
-          <p class="card-title">
-          <strong>Height:</strong>
-          <%= @sw_character['height'] %>
+          <h5 class="card-title">
+            <%= @sw_character['name'] %>
+          </h5>
+          <p class="card-text">
+            <strong>Species:</strong>
+            <%= @sw_character['species'].capitalize%>
           </p>
           <p class="card-text">
-          <strong>Hair Color:</strong>
-            <%= @sw_character['hair_color'] %>
+            <strong>HomeWorld:</strong>
+            
+            <%= @sw_character['homeworld']%>
           </p>
           <p class="card-text">
-          <strong>Skin Color:</strong>
-            <%= @sw_character['skin_color'] %>
-          </p>
-          <p class="card-text">
-          <strong>Eye Color:</strong>
-            <%= @sw_character['eye_color'] %>
-          </p>
-           <p class="card-text">
-          <strong>Birth Year:</strong>
-            <%= @sw_character['birth_year'] %>
+            <img src="<%= @sw_character['image']%>" class="img-fluid"><img>
           </p>
         </div>
       </div>

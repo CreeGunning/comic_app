@@ -5,13 +5,13 @@ class SwCharactersController < ApplicationController
   end
 
   def show
-    @sw_character = @people_data[params[:id].to_i]
+    @sw_character = @sw_data[params[:id].to_i]
   end
 
   private
 
   def fetch_data
-    response = HTTParty.get('https://swapi.dev/api/people/')
-    @people_data = response['results']
+    response = HTTParty.get('https://akabab.github.io/starwars-api/api/all.json')
+    @sw_data = response
   end
 end

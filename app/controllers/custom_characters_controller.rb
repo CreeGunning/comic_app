@@ -2,6 +2,7 @@
 
 class CustomCharactersController < ApplicationController
   before_action :set_custom_character, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[show index]
 
   # GET /custom_characters or /custom_characters.json
   def index

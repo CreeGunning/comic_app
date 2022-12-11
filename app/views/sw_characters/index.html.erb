@@ -1,20 +1,24 @@
 <div class="container">
 <h1>Star Wars Characters</h1>
-<% @people_data.each_with_index do |person, index| %>
+<% @sw_data.first(20).each_with_index do |sw, index| %>
   <div class="row">
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">
-            <%= person['name'] %>
+            <%= sw['name'] %>
           </h5>
           <p class="card-text">
-            <strong>Birth Year:</strong>
-            <%= person['birth_year'] %>
+            <strong>Species:</strong>
+            <%= sw['species'].capitalize%>
           </p>
           <p class="card-text">
-            <strong>Height:</strong>
-            <%= person['height'] %>
+            <strong>HomeWorld:</strong>
+            
+            <%= sw['homeworld']%>
+          </p>
+          <p class="card-text">
+            <img src="<%= sw['image']%>" class="img-fluid"><img>
           </p>
           <%= link_to "Show this character", sw_character_path(index), class:"btn btn-primary" %>
         </div>
