@@ -4,6 +4,7 @@
             <%= current_user.name %>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><%= link_to "Admin Dashboard", admin_path, class:"dropdown-item" if current_user.admin? %></li>
             <li><%= link_to "New Custom Character", new_custom_character_path, class:"dropdown-item" %></li>
             <%= link_to "Edit Account", edit_user_registration_path, class:"dropdown-item" %>
             <li><hr class="dropdown-divider"></li>

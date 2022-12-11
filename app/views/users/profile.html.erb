@@ -1,3 +1,24 @@
-<h1><%= @user.name %></h1>
-<h6><%= pluralize(@user.views, "view") %></h6>
-<p>Find me in app/views/users/profile.html.erb</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-8">
+            <h1><%= @user.name %></h1>
+            <h6>
+                <%= pluralize(@user.views, "Profile Views") %> |
+                <%= pluralize(@total_views, "Total Character Views") %>
+            </h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <% @custom_characters.each do |custom_character| %>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= link_to custom_character.name, custom_character %></h5>
+                        <p class="card-text"><%= "#{time_ago_in_words(custom_character.created_at)} ago" %></p>
+                        <p class="card-title"><%= custom_character.powers %></p>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

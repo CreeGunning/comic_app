@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  authenticated :user, ->(user) { user.admin? } do
+    get 'admin', to: 'admin#index'
+    get 'admin/custom_characters'
+    get 'admin/show_custom_character/:id', to: "admin#show_custom_character", as: 'admin_custom_character'
+  end
+
   get 'search', to: "search#index"
   get 'users/profile'
   devise_for :users, controllers: {

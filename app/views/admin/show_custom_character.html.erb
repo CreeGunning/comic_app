@@ -1,0 +1,32 @@
+<div class="container">
+    <h1 class="text-center">Adminstrator</h1>
+    <%= render 'admin/nav_links' %>
+
+    <div class="text-center mt-5">
+        <div class="btn-group">
+            <%= link_to "Edit", edit_custom_character_path(@custom_character), class:"btn btn-warning" %>
+            <%= button_to "Delete", @custom_character, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <p>
+            <strong>Custom Character Name:</strong> <%= @custom_character.name %>
+        </p>
+    </div>
+    <div class="row mt-1">
+        <p>
+            <strong>Views:</strong> <%= @custom_character.views%>
+        </p>
+    </div>
+    <div class="row mt-1">
+        <p>
+            <strong>Created By:</strong>
+             <%= "#{@custom_character.user.email} | #{@custom_character.user.name} | #{pluralize(@custom_character.user.views, "View")}" %>
+        </p>
+    </div>
+        <div class="row mt-1">
+        <p>
+            <strong>Powers:</strong> <%= @custom_character.powers %>
+        </p>
+    </div>
+</div>
