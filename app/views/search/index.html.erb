@@ -1,0 +1,22 @@
+<h1 class="text-center"><%= pluralize(@custom_characters.count, "Result") %></h1>
+<div class="container">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th><%= sort_link(@query, :name, "Custom Character Name", default_order: :asc) %></th>
+                <th><%= sort_link(@query, :powers, "Powers") %></th>
+                <th><%= sort_link(@query, :user_name, "Users") %></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @custom_characters.each do |custom_character| %>
+            <tr>
+                <td><%= link_to custom_character.name, custom_character%></td>
+                <td><%= custom_character.powers.truncate_words(25) %></td>
+                <td><%= link_to custom_character.user.name, custom_character.user%></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
