@@ -94,4 +94,4 @@ group :test do
   gem 'webdrivers'
 end
 
-gem "ransack", "~> 3.2"
+gem 'ransack', '~> 3.2'

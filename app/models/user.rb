@@ -7,13 +7,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :custom_characters
 
-  enum role: [:user, :admin]
+  enum role: %i[user admin]
   after_initialize :set_default_role, if: :new_record?
 
-  private 
+  private
 
   def set_default_role
     self.role ||= :user
   end
-
 end

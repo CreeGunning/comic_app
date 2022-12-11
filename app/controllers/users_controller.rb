@@ -9,8 +9,8 @@ class UsersController < ApplicationController
 
     @custom_characters.each do |custom_character|
       @total_views += custom_character.views
+    end
   end
-end
 
   private
 

@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 class SwCharactersController < ApplicationController
   before_action :fetch_data, only: %i[index show]
 
-  def index
-  end
+  def index; end
 
   def show
     @sw_character = @sw_data[params[:id].to_i]
